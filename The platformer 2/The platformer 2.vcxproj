@@ -146,6 +146,7 @@
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="GameStateManager.h" />
+    <ClInclude Include="Resources.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="TitlescreenState.h" />
     <ClInclude Include="World.h" />

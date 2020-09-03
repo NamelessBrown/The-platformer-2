@@ -4,6 +4,7 @@
 TitlescreenState::TitlescreenState(Context& context)
 	:State(context)
 {
+
 }
 
 void TitlescreenState::HandleEvents(const sf::Event& events)
