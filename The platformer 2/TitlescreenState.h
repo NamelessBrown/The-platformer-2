@@ -1,6 +1,7 @@
 #pragma once
 
 #include "State.h"
+#include "Entity.h"
 
 class TitlescreenState : public State
 {
@@ -12,6 +13,6 @@ public:
 	void Update(float dt) override;
 	void Draw() override;
 private:
-
+	Entity m_test;
 };
 
