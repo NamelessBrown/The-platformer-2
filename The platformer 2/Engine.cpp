@@ -6,7 +6,7 @@
 Engine::Engine()
 	:m_window(sf::VideoMode{1280, 720}, "The platformer 2", sf::Style::Close)
 {
-	State::Context context(m_window, m_registry);
+	State::Context context(m_window, m_registry, m_textureHolder);
 	auto titleScreen = std::make_unique<TitlescreenState>(context);
 	m_stateManager.PushState(std::move(titleScreen));
 }
