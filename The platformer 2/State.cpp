@@ -1,7 +1,7 @@
 #include "State.h"
 
-State::Context::Context(sf::RenderWindow& window, entt::registry& registry)
-	:window(&window), registry(&registry)
+State::Context::Context(sf::RenderWindow& window, entt::registry& registry, TextureHolder& textures)
+	:window(&window), registry(&registry), textureHolder(&textures)
 {
 }
 

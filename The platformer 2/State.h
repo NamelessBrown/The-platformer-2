@@ -2,15 +2,17 @@
 
 #include <SFML/Graphics.hpp>
 #include <entt/entt.hpp>
+#include "Resources.h"
 
 class State
 {
 public:
 	struct Context
 	{
-		Context(sf::RenderWindow& window, entt::registry& registry);
+		Context(sf::RenderWindow& window, entt::registry& registry, TextureHolder& textures);
 		sf::RenderWindow* window;
 		entt::registry* registry;
+		TextureHolder* textureHolder;
 	};
 public:
 	State(Context& context);
