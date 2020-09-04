@@ -16,6 +16,9 @@
     <Filter Include="Components">
       <UniqueIdentifier>{7096b717-6ebb-44e2-b886-2dc3da67da38}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Exceptions">
+      <UniqueIdentifier>{6fb19414-c317-4e39-addb-2431c1217a89}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.h">
@@ -44,6 +47,9 @@
     </ClInclude>
     <ClInclude Include="PositionComponent.h">
       <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ParsingException.h">
+      <Filter>Exceptions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

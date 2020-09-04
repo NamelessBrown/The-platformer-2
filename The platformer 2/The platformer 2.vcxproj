@@ -146,6 +146,7 @@
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="GameStateManager.h" />
+    <ClInclude Include="ParsingException.h" />
     <ClInclude Include="PositionComponent.h" />
     <ClInclude Include="Resources.h" />
     <ClInclude Include="SpriteComponent.h" />

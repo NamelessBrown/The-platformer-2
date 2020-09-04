@@ -5,7 +5,6 @@
 TitlescreenState::TitlescreenState(Context& context)
 	:State(context), m_test(context)
 {
-	context.textureHolder->Load("boobs", "DDD.png");
 	m_test.AddComponent<SpriteComponent>(context.textureHolder->GetResource("boobs"));
 	m_test.AddComponent<PositionComponent>(5.f, 5.f);
 }
