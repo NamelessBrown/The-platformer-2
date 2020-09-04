@@ -14,6 +14,7 @@ public:
 private:
 	void HandleEvents();
 	void Update(float dt);
+	void LoadAllTextures(const std::string& filename);
 	void Render();
 private:
 	sf::RenderWindow m_window;

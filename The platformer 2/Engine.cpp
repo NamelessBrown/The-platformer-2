@@ -2,10 +2,12 @@
 #include <SFML/Window/Event.hpp>
 #include <iostream>
 #include "TitlescreenState.h"
+#include "ParsingException.h"
 
 Engine::Engine()
 	:m_window(sf::VideoMode{1280, 720}, "The platformer 2", sf::Style::Close)
 {
+	LoadAllTextures("Textures.tml");
 	State::Context context(m_window, m_registry, m_textureHolder);
 	auto titleScreen = std::make_unique<TitlescreenState>(context);
 	m_stateManager.PushState(std::move(titleScreen));
@@ -52,6 +54,29 @@ void Engine::HandleEvents()
 void Engine::Update(float dt)
 {
 	m_stateManager.GetCurrentState()->Update(dt);
+}
+
+void Engine::LoadAllTextures(const std::string& filename)
+{
+	tinyxml2::XMLDocument document;
+	document.LoadFile(filename.c_str());
+	if (document.Error())
+	{
+		std::string error{ "Failed to load file " + filename };
+		throw ParsingException{ error.c_str() };
+	}
+
+	tinyxml2::XMLElement* root = document.RootElement();
+	for (auto element = root->FirstChildElement(); element != nullptr; element = element->NextSiblingElement())
+	{
+		std::string value{ element->Value() };
+		if (value == "texture")
+		{
+			std::string id = element->Attribute("id");
+			std::string filename = element->Attribute("src");
+			m_textureHolder.Load(id, filename);
+		}
+	}
 }
 
 void Engine::Render()
