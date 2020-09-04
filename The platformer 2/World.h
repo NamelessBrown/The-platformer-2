@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <entt/entt.hpp>
 #include <tinyxml2.h>
+#include <string>
 
 class World : sf::NonCopyable
 {
@@ -13,7 +14,7 @@ public:
 	void Render();
 private:
 	//tinyxml!!!
-	void BuildWorld();
+	void BuildWorld(const std::string& filename);
 private:
 	sf::RenderWindow& m_window;
 };
