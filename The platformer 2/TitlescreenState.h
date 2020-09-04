@@ -2,11 +2,12 @@
 
 #include "State.h"
 #include "Entity.h"
+#include "World.h"
 
 class TitlescreenState : public State
 {
 public:
-	TitlescreenState(Context& context);
+	explicit TitlescreenState(Context& context);
 	~TitlescreenState() = default;
 public:
 	void HandleEvents(const sf::Event& events) override;
@@ -14,5 +15,6 @@ public:
 	void Draw() override;
 private:
 	Entity m_test;
+	World m_world;
 };
 
