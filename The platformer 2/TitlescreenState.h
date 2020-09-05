@@ -3,6 +3,7 @@
 #include "State.h"
 #include "Entity.h"
 #include "World.h"
+#include "TileMap.h"
 
 class TitlescreenState : public State
 {
@@ -16,5 +17,6 @@ public:
 private:
 	Entity m_test;
 	World m_world;
+	TileMap m_tilemap;
 };
 

@@ -3,11 +3,11 @@
 #include "PositionComponent.h"
 
 TitlescreenState::TitlescreenState(Context& context)
-	:State(context), m_test(context), m_world(*context.window)
+	:State(context), m_test(context), m_world(*context.window), m_tilemap(context.textureHolder->GetResource("tiles"))
 {
 	m_test.AddComponent<SpriteComponent>(context.textureHolder->GetResource("boobs"));
 	m_test.AddComponent<PositionComponent>(5.f, 5.f);
-
+	m_tilemap.Load("test.tmx");
 }
 
 void TitlescreenState::HandleEvents(const sf::Event& events)
@@ -44,4 +44,5 @@ void TitlescreenState::Draw()
 		sprite.Draw(window);
 	}
 
+	window.draw(m_tilemap);
 }
