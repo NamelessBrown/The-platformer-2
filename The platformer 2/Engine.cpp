@@ -20,16 +20,9 @@ void Engine::Running()
 
 	while (m_window.isOpen())
 	{
+		float dt = m_clock.restart().asSeconds() * 60.f;
 		HandleEvents();
-
-		sf::Time elapsedTime = m_clock.restart();
-		timeSinceLastUpdate += elapsedTime;
-		while (timeSinceLastUpdate > framerate)
-		{
-			timeSinceLastUpdate -= framerate;
-			Update(framerate.asSeconds());
-		}
-
+		Update(dt);
 		Render();
 	}
 }
