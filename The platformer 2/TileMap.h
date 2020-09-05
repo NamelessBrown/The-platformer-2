@@ -11,6 +11,22 @@ public:
     ~TileMap() = default;
 public:
     bool Load(const std::string& filename);
+    int GetTileAt(int i, int j) const
+    {
+        return m_dataMap[i + j * m_width];
+    }
+    int GetWidth() const
+    {
+        return m_width;
+    }
+    int GetHeight() const
+    {
+        return m_height;
+    }
+    const std::vector<int>& GetTileMap() const
+    {
+        return m_dataMap;
+    }
 private:
     struct TileData
     {
@@ -26,6 +42,8 @@ private:
 private:
     sf::VertexArray m_vertices;
     sf::Texture& m_texture;
+    int m_width;
+    int m_height;
     std::vector<int> m_dataMap;
 };
 

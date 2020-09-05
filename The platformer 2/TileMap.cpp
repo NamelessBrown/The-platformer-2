@@ -15,6 +15,8 @@ bool TileMap::Load(sf::Vector2u tileSize, const int* tiles, unsigned width, unsi
 {
     m_vertices.setPrimitiveType(sf::Quads);
     m_vertices.resize(width * height * 4);
+    m_width = width;
+    m_height = height;
 
     for (unsigned i = 0; i < width; ++i)
     {
@@ -47,7 +49,7 @@ bool TileMap::Load(sf::Vector2u tileSize, const int* tiles, unsigned width, unsi
 } 
 
 TileMap::TileMap(sf::Texture& texture)
-    :m_texture(texture)
+    :m_texture(texture), m_width(0), m_height(0)
 {
 }
 
@@ -122,10 +124,6 @@ bool TileMap::Load(const std::string& filename)
 
 
     }
-
-
-
-
 
     return false;
 }
