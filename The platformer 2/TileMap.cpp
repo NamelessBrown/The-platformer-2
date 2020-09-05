@@ -1,4 +1,15 @@
 #include "TileMap.h"
+#include "ParsingException.h"
+#include <algorithm>
+#include <sstream>
+
+/*
+    How to solve this->problem
+    Tinyxml Get the tileSize, rows, colums from the element tag (of course)
+    Get the level data whole in put it in a string
+    filter out the junk - (commas, 
+
+*/
 
 bool TileMap::Load(sf::Vector2u tileSize, const int* tiles, unsigned width, unsigned height)
 {
@@ -33,11 +44,90 @@ bool TileMap::Load(sf::Vector2u tileSize, const int* tiles, unsigned width, unsi
 
 
     return true;
-}
+} 
 
 TileMap::TileMap(sf::Texture& texture)
     :m_texture(texture)
 {
+}
+
+bool TileMap::Load(const std::string& filename)
+{
+    tinyxml2::XMLDocument document;
+    document.LoadFile(filename.c_str());
+    if (document.Error())
+    {
+        throw ParsingException{ std::string{ "Failed to load -> " + filename }.c_str() };
+    }
+
+    tinyxml2::XMLElement* root = document.RootElement();
+    int maxRows = root->IntAttribute("height");
+    int maxCols = root->IntAttribute("width");
+    int tileSize = root->IntAttribute("tilewidth");
+    TileData tileData;
+    
+    for (auto e = root->FirstChildElement(); e != nullptr; e = e->NextSiblingElement())
+    {
+        std::string val{ e->Value() };
+        if (val == "tileset")
+        {
+            tileData.tileCount = e->IntAttribute("tilecount");
+            tileData.column = e->IntAttribute("columns");
+            tileData.row = tileData.tileCount / tileData.column;
+            tileData.tileSize = e->IntAttribute("tilewidth");
+            tinyxml2::XMLElement* image = e->FirstChildElement();
+            tileData.source = image->Attribute("source");
+        }
+        else if (val == "layer")
+        {
+            tinyxml2::XMLElement* data = nullptr;
+            for (auto iter = e->FirstChildElement(); iter != nullptr; iter = iter->NextSiblingElement())
+            {
+                std::string dataStr{ iter->Value() };
+                if (dataStr == "data")
+                {
+                    data = iter;
+                    break;
+                }
+            }
+
+            std::string matrix;
+            if (data != nullptr)
+            {
+                matrix = data->GetText();
+            }
+            std::istringstream iss(matrix);
+            std::string id;
+
+            m_dataMap = std::vector<int>(maxRows * maxCols);
+            for (int row = 0; row < maxRows; row++)
+            {
+                for (int column = 0; column < maxCols; column++)
+                {
+                    std::getline(iss, id, ',');
+                    std::stringstream converter(id);
+                    converter >> m_dataMap[row * maxCols + column];
+
+                    if (!iss.good())
+                    {
+                        break;
+                    }
+
+                }
+            }
+
+            Load({ 32, 32 }, m_dataMap.data(), maxCols, maxRows);
+
+        }
+
+
+    }
+
+
+
+
+
+    return false;
 }
 
 void TileMap::draw(sf::RenderTarget& target, sf::RenderStates states) const
