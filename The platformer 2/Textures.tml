@@ -3,4 +3,5 @@
     <texture id="boobs" src="DDD.png"/>
     <texture id="sheet" src="sheet1.png"/>
     <texture id="tiles" src="tileset.png"/>
+    <texture id="player" src="player.png"/>
 </textures>
