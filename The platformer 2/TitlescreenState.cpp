@@ -3,10 +3,12 @@
 #include "PositionComponent.h"
 
 TitlescreenState::TitlescreenState(Context& context)
-	:State(context), m_test(context), m_world(*context.window), m_tilemap(context.textureHolder->GetResource("tiles"))
+	:State(context), player(context.registry->create(), context), m_world(*context.window), m_tilemap(context.textureHolder->GetResource("tiles"))
 {
-	m_test.AddComponent<SpriteComponent>(context.textureHolder->GetResource("boobs"));
-	m_test.AddComponent<PositionComponent>(5.f, 5.f);
+	auto& sprite = player.AddComponent<SpriteComponent>(context.textureHolder->GetResource("player"), sf::IntRect(0, 0, 50, 50));
+	sprite.AddAnimation("standing", Animation(7, 0, 0, 50, 50));
+	sprite.ChangeAnimation("standing");
+
 	m_tilemap.Load("test.tmx");
 }
 
@@ -17,18 +19,12 @@ void TitlescreenState::HandleEvents(const sf::Event& events)
 
 void TitlescreenState::Update(float dt)
 {
-	auto view = GetContext().registry->view<PositionComponent, SpriteComponent>();
+	auto view = GetContext().registry->view<SpriteComponent>();
 
-	for (auto& entity : view)
+	for (const auto& entity : view)
 	{
-		auto& position = view.get<PositionComponent>(entity);
 		auto& sprite = view.get<SpriteComponent>(entity);
-		
-		position.x += 50.f * dt;
-		position.y += 50.f * dt;
-
-		sprite.GetSprite().setPosition(position.x, position.y);
-
+		sprite.Update(dt);
 	}
 
 }

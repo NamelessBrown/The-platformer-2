@@ -15,7 +15,7 @@ public:
 	void Update(float dt) override;
 	void Draw() override;
 private:
-	Entity m_test;
+	Entity player;
 	World m_world;
 	TileMap m_tilemap;
 };
