@@ -24,7 +24,7 @@ public:
 	template<typename T>
 	T& GetComponent()
 	{
-		assert(!HasComponent<T>() && "Don't have the component");
+		assert(HasComponent<T>() && "Don't have the component");
 		return m_context.registry->get<T>(m_entity);
 	}
 private:
