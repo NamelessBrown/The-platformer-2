@@ -1,7 +1,6 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include <entt/entt.hpp>
 #include "Resources.h"
 
 class State
@@ -9,9 +8,8 @@ class State
 public:
 	struct Context
 	{
-		Context(sf::RenderWindow& window, entt::registry& registry, TextureHolder& textures);
+		Context(sf::RenderWindow& window, TextureHolder& textures);
 		sf::RenderWindow* window;
-		entt::registry* registry;
 		TextureHolder* textureHolder;
 	};
 public:

@@ -23,6 +23,10 @@ public:
     {
         return m_height;
     }
+    int GetTileSize() const
+    {
+        return m_tileSize;
+    }
     const std::vector<int>& GetTileMap() const
     {
         return m_dataMap;
@@ -44,6 +48,7 @@ private:
     sf::Texture& m_texture;
     int m_width;
     int m_height;
+    int m_tileSize;
     std::vector<int> m_dataMap;
 };
 

@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Components">
-      <UniqueIdentifier>{7096b717-6ebb-44e2-b886-2dc3da67da38}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Exceptions">
       <UniqueIdentifier>{6fb19414-c317-4e39-addb-2431c1217a89}</UniqueIdentifier>
     </Filter>
@@ -25,9 +22,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="World.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="State.h">
@@ -41,12 +35,6 @@
     </ClInclude>
     <ClInclude Include="Resources.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SpriteComponent.h">
-      <Filter>Components</Filter>
-    </ClInclude>
-    <ClInclude Include="PositionComponent.h">
-      <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="ParsingException.h">
       <Filter>Exceptions</Filter>
@@ -65,9 +53,6 @@
     <ClCompile Include="World.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Entity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="State.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -76,12 +61,6 @@
     </ClCompile>
     <ClCompile Include="TitlescreenState.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SpriteComponent.cpp">
-      <Filter>Components</Filter>
-    </ClCompile>
-    <ClCompile Include="PositionComponent.cpp">
-      <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="TileMap.cpp">
       <Filter>Source Files</Filter>

@@ -19,7 +19,6 @@ private:
 private:
 	sf::RenderWindow m_window;
 	sf::Clock m_clock;
-	entt::registry m_registry;
 	TextureHolder m_textureHolder;
 	GameStateManager m_stateManager;
 };

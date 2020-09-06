@@ -1,7 +1,6 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include <entt/entt.hpp>
 #include <tinyxml2.h>
 #include <string>
 

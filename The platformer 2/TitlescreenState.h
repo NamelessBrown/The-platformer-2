@@ -1,7 +1,6 @@
 #pragma once
 
 #include "State.h"
-#include "Entity.h"
 #include "World.h"
 #include "TileMap.h"
 
@@ -14,8 +13,8 @@ public:
 	void HandleEvents(const sf::Event& events) override;
 	void Update(float dt) override;
 	void Draw() override;
+	void HandleCollision();
 private:
-	Entity player;
 	World m_world;
 	TileMap m_tilemap;
 };
