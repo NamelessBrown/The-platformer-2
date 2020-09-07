@@ -7,13 +7,12 @@ TitlescreenState::TitlescreenState(Context& context)
 
 void TitlescreenState::HandleEvents(const sf::Event& events)
 {
-	
+
 }
 
 void TitlescreenState::Update(float dt)
 {
-	
-
+	m_world.Update(dt);
 }
 
 void TitlescreenState::Draw()
