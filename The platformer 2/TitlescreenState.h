@@ -16,6 +16,5 @@ public:
 	void HandleCollision();
 private:
 	World m_world;
-	TileMap m_tilemap;
 };
 
