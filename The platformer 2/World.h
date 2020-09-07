@@ -5,8 +5,6 @@
 #include <string>
 #include "TileMap.h"
 #include "State.h"
-#include "Camera.h"
-#include "Player.h"
 
 class World : sf::NonCopyable
 {
@@ -22,7 +20,5 @@ private:
 private:
 	sf::RenderWindow& m_window;
 	TileMap m_tilemap;
-	Camera m_camera;
-	Player m_player;
 };
 

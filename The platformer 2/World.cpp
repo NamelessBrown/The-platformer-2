@@ -3,8 +3,7 @@
 #include <iostream>
 
 World::World(State::Context& context)
-	:m_window(*context.window), m_tilemap(context.textureHolder->GetResource("tiles")), m_camera({0.f, 0.f}),
-	m_player(context.textureHolder->GetResource("player"))
+	:m_window(*context.window), m_tilemap(context.textureHolder->GetResource("tiles"))
 {
 	BuildWorld("test.tmx");
 }
@@ -12,14 +11,10 @@ World::World(State::Context& context)
 void World::Update(float dt)
 {
 
-	m_camera.Update(m_player.GetPosition());
-	m_player.Update(dt);
 }
 
 void World::Render()
 {
-	//m_window.setView(m_camera.CurrentView());
-	m_player.Render(m_window);
 	m_window.draw(m_tilemap);
 }
 
