@@ -13,11 +13,6 @@ void World::Update(float dt)
 
 }
 
-void World::Render()
-{
-	m_window.draw(m_tilemap);
-}
-
 bool World::CheckCollisionWithMap(const sf::IntRect& rect)
 {
 	const int tileSize = m_tilemap.GetTileSize();
@@ -64,4 +59,9 @@ bool World::CheckCollisionWithMap(const sf::IntRect& rect)
 void World::BuildWorld(const std::string& filename)
 {
 	m_tilemap.Load(filename);
+}
+
+void World::draw(sf::RenderTarget& target, sf::RenderStates states) const
+{
+	target.draw(m_tilemap);
 }

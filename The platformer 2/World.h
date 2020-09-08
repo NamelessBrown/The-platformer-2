@@ -6,17 +6,17 @@
 #include "TileMap.h"
 #include "State.h"
 
-class World : sf::NonCopyable
+class World : sf::NonCopyable, public sf::Drawable
 {
 public:
 	explicit World(State::Context& context);
 public:
 	void Update(float dt);
-	void Render();
 	bool CheckCollisionWithMap(const sf::IntRect& rect);
 private:
 	//tinyxml!!!
 	void BuildWorld(const std::string& filename);
+	void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 private:
 	sf::RenderWindow& m_window;
 	TileMap m_tilemap;

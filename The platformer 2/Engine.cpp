@@ -76,5 +76,6 @@ void Engine::Render()
 {
 	m_window.clear();
 	m_stateManager.GetCurrentState()->Draw();
+	m_window.setView(m_window.getDefaultView());
 	m_window.display();
 }

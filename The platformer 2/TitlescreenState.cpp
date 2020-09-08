@@ -18,7 +18,7 @@ void TitlescreenState::Update(float dt)
 void TitlescreenState::Draw()
 {
 	auto& window = *GetContext().window;
-	m_world.Render();
+	window.draw(m_world);
 }
 
 void TitlescreenState::HandleCollision()
