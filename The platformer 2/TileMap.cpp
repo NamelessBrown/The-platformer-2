@@ -11,6 +11,49 @@
 
 */
 
+bool TileMap::CheckCollisionWithMap(const sf::IntRect& rect)
+{
+
+    //const int tileSize = GetTileSize();
+    const int tileRows = m_height;
+    const int tileColumns = m_width;
+
+    int left_tile = rect.left / m_tileSize;
+    int right_tile = (rect.left + rect.width) / m_tileSize;
+    int top_tile = rect.top / m_tileSize;
+    int bottom_tile = (rect.top + rect.height) / m_tileSize;
+
+    if (left_tile < 0)
+    {
+        left_tile = 0;
+    }
+    if (right_tile > tileColumns)
+    {
+        right_tile = tileColumns;
+    }
+    if (top_tile < 0)
+    {
+        top_tile = 0;
+    }
+    if (bottom_tile > tileRows)
+    {
+        bottom_tile = tileRows;
+    }
+
+    for (auto i = left_tile; i <= right_tile; ++i)
+    {
+        for (auto j = top_tile; j <= bottom_tile; ++j)
+        {
+            if (GetTileAt(i, j) > 0)
+            {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
 bool TileMap::Load(sf::Vector2u tileSize, const int* tiles, unsigned width, unsigned height)
 {
     m_vertices.setPrimitiveType(sf::Quads);

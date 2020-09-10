@@ -31,6 +31,7 @@ public:
     {
         return m_dataMap;
     }
+    bool CheckCollisionWithMap(const sf::IntRect& rect);
 private:
     struct TileData
     {
