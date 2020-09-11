@@ -1,8 +1,8 @@
 #pragma once
 
 #include <SFML/Graphics/RenderWindow.hpp>
-#include "World.h"
-#include "GameStateManager.h"
+#include "../World/World.h"
+#include "../States/GameStateManager.h"
 #include "Resources.h"
 
 class Engine

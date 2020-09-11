@@ -1,12 +1,12 @@
 #include "World.h"
-#include "ParsingException.h"
+#include "../Engine/ParsingException.h"
 #include <iostream>
 
 World::World(State::Context& context)
 	:m_window(*context.window), m_tilemap(context.textureHolder->GetResource("tiles")), 
 	m_player(context.textureHolder->GetResource("player"))
 {
-	BuildWorld("test.tmx");
+	BuildWorld("Levels/test.tmx");
 }
 
 void World::HandleEvents()

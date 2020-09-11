@@ -1,6 +1,6 @@
 #pragma once
 
-#include "AnimatedSprite.h"
+#include "../Animation/AnimatedSprite.h"
 
 class TileMap;
 class Player : public sf::Drawable

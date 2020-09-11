@@ -1,8 +1,8 @@
 #pragma once
 
 #include "State.h"
-#include "World.h"
-#include "TileMap.h"
+#include "../World/World.h"
+#include "../World/TileMap.h"
 
 class TitlescreenState : public State
 {

@@ -4,7 +4,7 @@
 #include <tinyxml2.h>
 #include <string>
 #include "TileMap.h"
-#include "State.h"
+#include "../States/State.h"
 #include "Player.h"
 
 class World : sf::NonCopyable, public sf::Drawable
