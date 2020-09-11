@@ -108,7 +108,7 @@ sf::FloatRect AnimatedSprite::GetLocalBounds() const
 
 sf::FloatRect AnimatedSprite::GetGlobalBounds() const
 {
-	return sf::FloatRect();
+	return getTransform().transformRect(GetLocalBounds());
 }
 
 bool AnimatedSprite::IsLooped() const

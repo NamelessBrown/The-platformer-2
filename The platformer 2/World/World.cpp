@@ -11,7 +11,9 @@ World::World(State::Context& context)
 
 void World::HandleEvents()
 {
-	m_player.HandleInput();
+	sf::View view = m_window.getDefaultView();
+	view.setCenter(m_player.GetPosition());
+	m_window.setView(view);
 }
 
 void World::Update(float dt)
