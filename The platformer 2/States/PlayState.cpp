@@ -1,6 +1,6 @@
 #include "PlayState.h"
 
-PlayState::PlayState(State::Context& context)
+PlayState::PlayState(Context& context)
 	:State(context), m_world(context)
 {
 }

@@ -5,7 +5,7 @@
 class PlayState : public State
 {
 public:
-	explicit PlayState(State::Context& context);
+	PlayState(Context& context);
 	~PlayState() = default;
 public:
 	void HandleEvents(const sf::Event& events) override;

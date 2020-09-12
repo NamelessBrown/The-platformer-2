@@ -1,7 +1,7 @@
 #include "State.h"
 
-State::Context::Context(sf::RenderWindow& window, TextureHolder& textures)
-	:window(&window), textureHolder(&textures)
+State::Context::Context(sf::RenderWindow& window, TextureHolder& textures, GameStateManager& stateManager)
+	:window(&window), textureHolder(&textures), gameStateManager(&stateManager)
 {
 }
 

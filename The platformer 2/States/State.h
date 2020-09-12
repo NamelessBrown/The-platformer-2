@@ -3,14 +3,16 @@
 #include <SFML/Graphics.hpp>
 #include "../Engine/Resources.h"
 
+class GameStateManager;
 class State
 {
 public:
 	struct Context
 	{
-		Context(sf::RenderWindow& window, TextureHolder& textures);
+		Context(sf::RenderWindow& window, TextureHolder& textures, GameStateManager& stateManager);
 		sf::RenderWindow* window;
 		TextureHolder* textureHolder;
+		GameStateManager* gameStateManager;
 	};
 public:
 	State(Context& context);
