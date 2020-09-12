@@ -3,6 +3,7 @@
 #include "State.h"
 #include "../World/World.h"
 #include "../World/TileMap.h"
+#include "../GUI/Button.h"
 
 class TitlescreenState : public State
 {
@@ -16,5 +17,6 @@ public:
 	void HandleCollision();
 private:
 	World m_world;
+	GUI::Button m_button;
 };
 

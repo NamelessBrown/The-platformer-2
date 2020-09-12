@@ -148,6 +148,7 @@
     <ClInclude Include="Engine\Engine.h" />
     <ClInclude Include="Engine\ParsingException.h" />
     <ClInclude Include="Engine\Resources.h" />
+    <ClInclude Include="GUI\Button.h" />
     <ClInclude Include="ParsingException.h" />
     <ClInclude Include="States\GameStateManager.h" />
     <ClInclude Include="States\State.h" />
@@ -161,6 +162,7 @@
     <ClCompile Include="Animation\Animation.cpp" />
     <ClCompile Include="Engine\Engine.cpp" />
     <ClCompile Include="Engine\main.cpp" />
+    <ClCompile Include="GUI\Button.cpp" />
     <ClCompile Include="States\GameStateManager.cpp" />
     <ClCompile Include="States\State.cpp" />
     <ClCompile Include="States\TitlescreenState.cpp" />
