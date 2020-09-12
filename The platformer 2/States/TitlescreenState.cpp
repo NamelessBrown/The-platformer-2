@@ -13,7 +13,7 @@ TitlescreenState::TitlescreenState(Context& context)
 		GetContext().gameStateManager->PushState(std::move(playState));
 		});
 
-	m_quit.setScale(m_quit.getScale() / 2.5f);
+	m_quit.setScale(m_quit.getScale() / 2.f);
 	m_quit.setPosition(250.f, 325.f);
 	m_quit.SetCallback([this]() {GetContext().window->close(); });
 }
