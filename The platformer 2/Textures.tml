@@ -4,4 +4,6 @@
     <texture id="sheet" src="Textures/sheet1.png"/>
     <texture id="tiles" src="Textures/tileset.png"/>
     <texture id="player" src="Textures/player.png"/>
+    <texture id="start" src="Textures/start.png"/>
+    <texture id="quit" src="Textures/quit.png"/>
 </textures>

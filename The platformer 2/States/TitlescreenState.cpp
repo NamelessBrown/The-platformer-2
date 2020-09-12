@@ -2,35 +2,27 @@
 #include <iostream>
 
 TitlescreenState::TitlescreenState(Context& context)
-	:State(context), m_world(context), 
-	m_button(sf::IntRect(0, 0, 405, 214), context.textureHolder->GetResource("boobs"))
+	:State(context), m_play(sf::IntRect(0, 0, 910, 359), context.textureHolder->GetResource("start")),
+	m_quit(sf::IntRect(0, 0, 322, 156), context.textureHolder->GetResource("quit"))
 {
-	GUI::Button::Callback callback;
-	callback = []() {std::cout << "hit!" << '\n'; };
-	m_button.SetCallback(callback);
-	m_button.setPosition(250.f, 250.f);
-	m_button.setRotation(45.f);
+	m_play.setScale(m_play.getScale() / 6.f);
+	sf::Vector2u windowSize = GetContext().window->getSize();
+	m_play.setPosition(float(windowSize.x) / 2.f, float(windowSize.y) / 2.f);
+	m_play.SetCallback([]() {std::cout << "Switch to play state" << '\n'; });
+
 }
 
 void TitlescreenState::HandleEvents(const sf::Event& events)
 {
-	m_world.HandleEvents();
+	m_play.IsClicked(sf::Mouse::getPosition(*GetContext().window));
 }
 
 void TitlescreenState::Update(float dt)
 {
-	m_button.IsClicked(sf::Mouse::getPosition(*GetContext().window));
-	m_world.Update(dt);
 }
 
 void TitlescreenState::Draw()
 {
 	auto& window = *GetContext().window;
-	window.draw(m_button);
-	window.draw(m_world);
-}
-
-void TitlescreenState::HandleCollision()
-{
-
+	window.draw(m_play);
 }
