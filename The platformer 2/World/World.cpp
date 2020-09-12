@@ -11,14 +11,16 @@ World::World(State::Context& context)
 
 void World::HandleEvents()
 {
-	sf::View view = m_window.getDefaultView();
-	view.setCenter(m_player.GetPosition());
-	m_window.setView(view);
+
 }
 
 void World::Update(float dt)
 {
 	m_player.Update(dt, m_tilemap);
+
+	sf::View view = m_window.getDefaultView();
+	view.setCenter(m_player.GetPosition().x, 500.f);
+	m_window.setView(view);
 }
 
 //tinyxml!!!
