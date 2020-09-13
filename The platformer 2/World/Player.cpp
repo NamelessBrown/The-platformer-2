@@ -11,7 +11,7 @@ Player::Player(sf::Texture& texture)
 		m_running.AddFrame({(i * 46) + (3 * 46), 50 * 3, 46, 50 });
 	}
 	m_sprite.SetAnimation(m_running);
-	m_sprite.setPosition({ 250.f, 50.f });
+	m_sprite.setPosition({ 350.f, 50.f });
 }
 
 void Player::HandleInput()
@@ -61,6 +61,7 @@ void Player::Update(float dt, TileMap& map)
 	}
 	else
 	{
+		m_isOnGround = false;
 		m_sprite.move(sf::Vector2f(0, 1.f));
 	}
 

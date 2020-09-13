@@ -6,4 +6,9 @@
     <texture id="player" src="Textures/player.png"/>
     <texture id="start" src="Textures/start.png"/>
     <texture id="quit" src="Textures/quit.png"/>
+    <texture id="tiles2" src="Textures/tileset2.png"/>
+    <texture id="war" src="Textures/war.png"/>
+    <texture id="space" src="Textures/spacebackground.jpg"/>
+    <texture id="background" src="Textures/background.jpg"/>
+    <texture id="background2" src="Textures/background2.png"/>
 </textures>

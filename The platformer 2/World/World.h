@@ -21,6 +21,7 @@ private:
 private:
 	sf::RenderWindow& m_window;
 	TileMap m_tilemap;
+	sf::Sprite m_background;
 	Player m_player;
 };
 
