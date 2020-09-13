@@ -154,6 +154,7 @@
     <ClInclude Include="States\PlayState.h" />
     <ClInclude Include="States\State.h" />
     <ClInclude Include="States\TitlescreenState.h" />
+    <ClInclude Include="World\Goal.h" />
     <ClInclude Include="World\Player.h" />
     <ClInclude Include="World\TileMap.h" />
     <ClInclude Include="World\World.h" />
@@ -168,6 +169,7 @@
     <ClCompile Include="States\PlayState.cpp" />
     <ClCompile Include="States\State.cpp" />
     <ClCompile Include="States\TitlescreenState.cpp" />
+    <ClCompile Include="World\Goal.cpp" />
     <ClCompile Include="World\Player.cpp" />
     <ClCompile Include="World\TileMap.cpp" />
     <ClCompile Include="World\World.cpp" />

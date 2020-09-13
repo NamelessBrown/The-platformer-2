@@ -67,6 +67,9 @@
     <ClInclude Include="States\PlayState.h">
       <Filter>States</Filter>
     </ClInclude>
+    <ClInclude Include="World\Goal.h">
+      <Filter>World</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animation\AnimatedSprite.cpp">
@@ -104,6 +107,9 @@
     </ClCompile>
     <ClCompile Include="States\PlayState.cpp">
       <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Goal.cpp">
+      <Filter>World</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
