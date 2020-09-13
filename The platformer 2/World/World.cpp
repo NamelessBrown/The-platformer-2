@@ -2,11 +2,13 @@
 #include "../Engine/ParsingException.h"
 #include <iostream>
 #include <random>
+#include "../States/GameStateManager.h"
+#include "../States/GameoverState.h"
 
 World::World(State::Context& context)
 	:m_window(*context.window), m_tilemap(context.textureHolder->GetResource("tiles2")),
 	m_player(context.textureHolder->GetResource("player")),
-	m_goal(context.textureHolder->GetResource("boobs")), m_currentLevel(1)
+	m_goal(context.textureHolder->GetResource("boobs")), m_currentLevel(1), m_context(context)
 {
 	m_background.setPosition(-350.f, 0.f);
 	m_background.setTexture(context.textureHolder->GetResource("background"), true);
@@ -27,9 +29,10 @@ void World::Update(float dt)
 	m_window.setView(view);
 
 
-	if (m_player.GetPosition().y > 30 * 32)
+	if (m_player.GetPosition().y >= 30 * 32)
 	{
-		m_window.close();
+		auto gameOver = std::make_unique<GameoverState>(m_context);
+		m_context.gameStateManager->PushState(std::move(gameOver));
 	}
 	sf::IntRect rect = m_goal.GetGoalRect();
 	if (m_goal.GetGoalRect().intersects(m_player.GetPlayerRect()))
@@ -44,7 +47,7 @@ void World::Update(float dt)
 void World::BuildWorld()
 {
 	std::mt19937 rng(std::random_device{}());
-	std::uniform_real_distribution<float> distributionX(3000.f, 4000.f);
+	std::uniform_real_distribution<float> distributionX(3000.f, 5000.f);
 	std::uniform_real_distribution<float> distributionY(350.f, 600.f);
 
 	m_goal.SetPosition(distributionX(rng), distributionY(rng));

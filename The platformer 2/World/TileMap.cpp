@@ -13,7 +13,6 @@
 
 bool TileMap::CheckCollisionWithMap(const sf::IntRect& rect)
 {
-
     //const int tileSize = GetTileSize();
     const int tileRows = m_height;
     const int tileColumns = m_width;
@@ -44,9 +43,12 @@ bool TileMap::CheckCollisionWithMap(const sf::IntRect& rect)
     {
         for (auto j = top_tile; j <= bottom_tile; ++j)
         {
-            if (GetTileAt(i, j) > 0)
+            if (i + j * m_width < m_dataMap.size())
             {
-                return true;
+                if (GetTileAt(i, j) > 0)
+                {
+                    return true;
+                }
             }
         }
     }

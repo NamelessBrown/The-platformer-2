@@ -20,6 +20,7 @@ private:
 	void BuildWorld();
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 private:
+	State::Context& m_context;
 	sf::RenderWindow& m_window;
 	TileMap m_tilemap;
 	int m_currentLevel;

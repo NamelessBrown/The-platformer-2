@@ -150,6 +150,7 @@
     <ClInclude Include="Engine\Resources.h" />
     <ClInclude Include="GUI\Button.h" />
     <ClInclude Include="ParsingException.h" />
+    <ClInclude Include="States\GameoverState.h" />
     <ClInclude Include="States\GameStateManager.h" />
     <ClInclude Include="States\PlayState.h" />
     <ClInclude Include="States\State.h" />
@@ -165,6 +166,7 @@
     <ClCompile Include="Engine\Engine.cpp" />
     <ClCompile Include="Engine\main.cpp" />
     <ClCompile Include="GUI\Button.cpp" />
+    <ClCompile Include="States\GameoverState.cpp" />
     <ClCompile Include="States\GameStateManager.cpp" />
     <ClCompile Include="States\PlayState.cpp" />
     <ClCompile Include="States\State.cpp" />

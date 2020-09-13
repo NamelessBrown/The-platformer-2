@@ -65,6 +65,7 @@ void Player::Update(float dt, TileMap& map)
 {
 	HandleInput();
 
+	
 	if (map.CheckCollisionWithMap(GetPlayerRect()))
 	{
 		m_isOnGround = true;
