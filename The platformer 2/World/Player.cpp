@@ -14,17 +14,27 @@ Player::Player(sf::Texture& texture)
 	m_sprite.setPosition({ 350.f, 50.f });
 }
 
+void Player::SetPosition(const sf::Vector2f& position)
+{
+	SetPosition(position.x, position.y);
+}
+
+void Player::SetPosition(float x, float y)
+{
+	m_sprite.setPosition(x, y);
+}
+
 void Player::HandleInput()
 {
 	sf::Vector2f velocity{ 0.f, 0.f };
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
-		velocity.x += 1.f;
+		velocity.x = 1.f;
 		m_sprite.setScale(sf::Vector2f(1.f, 1.f));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 	{
-		velocity.x -= 1.f;
+		velocity.x = -1.f;
 		m_sprite.setScale(sf::Vector2f(-1.f, 1.f));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && m_isOnGround)

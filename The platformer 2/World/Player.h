@@ -8,6 +8,8 @@ class Player : public sf::Drawable
 public:
 	Player(sf::Texture& texture);
 public:
+	void SetPosition(const sf::Vector2f& position);
+	void SetPosition(float x, float y);
 	sf::IntRect GetPlayerRect() const { return static_cast<sf::IntRect>(m_sprite.GetGlobalBounds()); }
 	sf::Vector2f GetPosition() const { return m_sprite.getPosition(); }
 	void HandleInput();
