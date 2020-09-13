@@ -7,15 +7,17 @@ GameoverState::GameoverState(Context& context)
 	m_quit(sf::IntRect(0, 0, 322, 156), context.textureHolder->GetResource("quit"))
 {
 	m_play.setScale(m_play.getScale() / 6.f);
-	m_play.setPosition(250.f, 250.f);
+	m_play.setPosition(0.f, 250.f);
 	m_play.SetCallback([this, context]() mutable {
 		auto titlescreen = std::make_unique<TitlescreenState>(context);
 		context.gameStateManager->PushState(std::move(titlescreen));
 		});
 
 	m_quit.setScale(m_quit.getScale() / 2.f);
-	m_quit.setPosition(250.f, 325.f);
+	m_quit.setPosition(0.f, 325.f);
 	m_quit.SetCallback([this]() {GetContext().window->close(); });
+	m_background.setTexture(context.textureHolder->GetResource("gameOver"));
+	m_background.setPosition(250.f, 150.f);
 }
 
 void GameoverState::HandleEvents(const sf::Event& events)
@@ -31,6 +33,7 @@ void GameoverState::Update(float dt)
 void GameoverState::Draw()
 {
 	auto& window = *GetContext().window;
+	window.draw(m_background);
 	window.draw(m_play);
 	window.draw(m_quit);
 }

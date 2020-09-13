@@ -73,6 +73,9 @@
     <ClInclude Include="States\GameoverState.h">
       <Filter>States</Filter>
     </ClInclude>
+    <ClInclude Include="Engine\Music.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animation\AnimatedSprite.cpp">
@@ -116,6 +119,9 @@
     </ClCompile>
     <ClCompile Include="States\GameoverState.cpp">
       <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Music.cpp">
+      <Filter>Engine</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

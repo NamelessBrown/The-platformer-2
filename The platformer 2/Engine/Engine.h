@@ -4,6 +4,7 @@
 #include "../World/World.h"
 #include "../States/GameStateManager.h"
 #include "Resources.h"
+#include "Music.h"
 
 class Engine
 {
@@ -21,5 +22,6 @@ private:
 	sf::Clock m_clock;
 	TextureHolder m_textureHolder;
 	GameStateManager m_stateManager;
+	Music m_music;
 };
 

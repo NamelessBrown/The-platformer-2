@@ -24,6 +24,12 @@ void Engine::Running()
 		HandleEvents();
 		Update(dt);
 		Render();
+
+		if (m_music.getSong().getStatus() == sf::Music::Stopped)
+		{
+			m_music.Play();
+		}
+
 	}
 }
 

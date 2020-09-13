@@ -11,4 +11,6 @@
     <texture id="space" src="Textures/spacebackground.jpg"/>
     <texture id="background" src="Textures/background.jpg"/>
     <texture id="background2" src="Textures/background2.png"/>
+    <texture id="title" src="Textures/platformer 2.png"/>
+    <texture id="gameOver" src="Textures/gameOver.png"/>
 </textures>

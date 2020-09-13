@@ -146,6 +146,7 @@
     <ClInclude Include="Animation\AnimatedSprite.h" />
     <ClInclude Include="Animation\Animation.h" />
     <ClInclude Include="Engine\Engine.h" />
+    <ClInclude Include="Engine\Music.h" />
     <ClInclude Include="Engine\ParsingException.h" />
     <ClInclude Include="Engine\Resources.h" />
     <ClInclude Include="GUI\Button.h" />
@@ -165,6 +166,7 @@
     <ClCompile Include="Animation\Animation.cpp" />
     <ClCompile Include="Engine\Engine.cpp" />
     <ClCompile Include="Engine\main.cpp" />
+    <ClCompile Include="Engine\Music.cpp" />
     <ClCompile Include="GUI\Button.cpp" />
     <ClCompile Include="States\GameoverState.cpp" />
     <ClCompile Include="States\GameStateManager.cpp" />

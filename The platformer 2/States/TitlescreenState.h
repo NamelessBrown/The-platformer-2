@@ -15,5 +15,6 @@ public:
 private:
 	GUI::Button m_play;
 	GUI::Button m_quit;
+	sf::Sprite m_background;
 };
 
