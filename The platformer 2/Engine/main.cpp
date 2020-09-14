@@ -11,7 +11,6 @@ int main()
 	catch (const std::exception& exception)
 	{
 		std::cout << exception.what() << '\n';
-		system("pause"); //Testing Remove later!!!!
 		return -1;
 	}
 }
